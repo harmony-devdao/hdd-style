@@ -1,0 +1,51 @@
+@import "_variables";
+
+html {
+    font-family: $font-family;
+    background-color: $night-blue;
+    font-size: $font-size;
+}
+
+header {
+    
+    max-width: 512px;
+    margin: auto;
+    margin-bottom: 2em;
+    color: $green;
+
+    >img {
+        max-width: 100%;
+        display: block;
+        padding: $spacing 2*$spacing;
+        box-sizing: border-box;
+    }
+}
+
+.app {
+    // color: $white;
+    h1{
+        margin-top: 0;
+    }
+    color: $white;
+    background-color: $midnight-blue;
+    border-radius: $radius;
+    padding: $spacing 2*$spacing;
+}
+
+.accent {
+    font-weight: bold;
+    color: $green;
+}
+
+main {
+    margin: auto;
+    width: 1080px;
+    max-width: 100%;
+
+    box-sizing: border-box;
+    padding: $spacing 2*$spacing;
+
+    >h1 {
+        margin-top: 0;
+    }
+}

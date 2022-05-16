@@ -1,0 +1,163 @@
+body, html {
+  padding: 1.1rem;
+  min-height: 100%;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-VariableFont_wght.ttf") format("ttf-variations");
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf") format("ttf-variations");
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+html {
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  background-color: #101e4a;
+  font-size: 1.1rem;
+}
+
+header {
+  max-width: 512px;
+  margin: auto;
+  margin-bottom: 2em;
+  color: #69fabd;
+}
+header > img {
+  max-width: 100%;
+  display: block;
+  padding: 1.1rem 2.2rem;
+  box-sizing: border-box;
+}
+
+.app {
+  color: whitesmoke;
+  background-color: #040a17;
+  border-radius: 0.33rem;
+  padding: 1.1rem 2.2rem;
+}
+.app h1 {
+  margin-top: 0;
+}
+
+.accent {
+  font-weight: bold;
+  color: #69fabd;
+}
+
+main {
+  margin: auto;
+  width: 1080px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 1.1rem 2.2rem;
+}
+main > h1 {
+  margin-top: 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.33rem;
+  outline-color: #69fabd;
+  background-color: #3f3f3f;
+  border: none;
+  color: whitesmoke;
+  font-weight: bold;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+.spinner {
+  border: 0.2em solid #69fabd;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  border-bottom-color: transparent;
+  animation: infinite 1s linear spin;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.button {
+  display: block;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  padding: 1.1rem 1.1rem;
+  background-color: #3f3f3f;
+  border-radius: 0.33rem;
+  transition: all 0.15s;
+  margin: 1em 0;
+}
+.button:hover {
+  background-color: #4c4c4c;
+}
+.button:active {
+  background-color: #3f3f3f;
+  box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.async-button {
+  display: flex;
+  justify-content: center;
+}
+.async-button.waiting > .spinner {
+  opacity: 1;
+}
+.async-button > .spinner {
+  margin-right: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.button-group {
+  display: flex;
+}
+.button-group > *:not(:last-child) {
+  margin-right: 0.22rem;
+}
+.button-group .button {
+  border-radius: 0;
+}
+.button-group .button.highlight {
+  background-color: #46ac80;
+}
+.button-group .button.highlight:hover {
+  background-color: #53b98d;
+}
+.button-group .button.danger {
+  background-color: #E8174D;
+}
+.button-group .button.danger:hover {
+  background-color: #ea2e5f;
+}
+.button-group .button:first-child {
+  border-top-left-radius: 0.33rem;
+  border-bottom-left-radius: 0.33rem;
+}
+.button-group .button:last-child {
+  border-top-right-radius: 0.33rem;
+  border-bottom-right-radius: 0.33rem;
+}
+.button-group > * {
+  flex: 1;
+}
+
+/*# sourceMappingURL=harmony-dev-dao-style.css.map */

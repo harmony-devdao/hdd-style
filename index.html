@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Developer DAO - Template</title>
+
+    <!-- Use the stylesheet -->
+    <link rel="stylesheet" href="css/harmony-dev-dao-style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="./images/harmony-dev-dao-logo.png" />
+        </header>
+        <div class="app">
+            <h1>This is an example website</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="accent">If you need to say something important.</p>
+            <h2>Input</h2>
+            <label for="input-example"></label>
+            <input id="input-example" type="text">
+            <h2>Button</h2>
+            <div class="button">
+                Click Me
+            </div>
+            <div class="button async-button" onclick="toggleSpinner(event)">
+                <div class="spinner"></div>
+                Click To Toggle Async
+            </div>
+
+            <div class="button-group">
+                <div class="button">Cancel</div>
+                <div class="button highlight">Okay</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleSpinner(event){
+            event.currentTarget.classList.toggle("waiting")
+        }
+    </script>
+</body>
+
+</html>

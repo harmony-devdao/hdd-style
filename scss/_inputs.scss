@@ -1,0 +1,120 @@
+@import "_variables";
+
+input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing/2 $spacing;
+    border-radius: $radius;
+    outline-color: $green;
+    background-color: $gray;
+    border: none;
+    color: $white;
+    font-weight: bold;
+    font-family: $font-family;
+    font-size: $bigger-font-size;
+}
+
+.spinner {
+    border: 0.2em solid $green;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+
+    border-bottom-color: transparent;
+    animation: infinite 1s linear spin;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.button {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+
+    padding: $spacing $spacing;
+    background-color: $gray;
+    border-radius: $radius;
+
+    transition: all 0.15s;
+    margin: 1em 0;
+
+    &:hover {
+        background-color: lighten($gray, 5%);
+    }
+
+    &:active {
+        background-color: $gray;
+        box-shadow: inset $shadow;
+    }
+}
+
+
+.async-button {
+    display: flex;
+    justify-content: center;
+
+    &.waiting > .spinner  {
+        opacity: 1;
+    }
+
+    > .spinner {
+        margin-right: $spacing;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+}
+
+.button-group {
+    display: flex;
+
+    >*:not(:last-child){
+        margin-right: $gap;
+    }
+
+    .button {
+        border-radius: 0;
+
+        &.highlight {
+            background-color: $dark-green;
+
+            &:hover {
+                background-color:  lighten($dark-green, 5%)
+            }
+        }
+
+        &.danger {
+            background-color: $red;
+
+            &:hover {
+                background-color:  lighten($red, 5%)
+            }
+        }
+
+        &:first-child {
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+
+    > * {
+        flex: 1;
+    }
+}
