@@ -12,20 +12,34 @@
 </head>
 
 <body>
+    <div id="notifications" class="notifications">
+    </div>
+
     <main>
         <header>
             <img src="./images/harmony-dev-dao-logo.png" />
         </header>
         <div class="app">
             <h1>This is an example website</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <p class="accent">If you need to say something important.</p>
             <h2>Input</h2>
             <label for="input-example"></label>
             <input id="input-example" type="text">
             <h2>Button</h2>
-            <div class="button">
-                Click Me
+            <div class="button" onclick="notify('info')">
+                Info
+            </div>
+            <div class="button" onclick="notify('success')">
+                Success
+            </div>
+            <div class="button" onclick="notify('warn')">
+                Warn
+            </div>
+            <div class="button" onclick="notify('error')">
+                Error
             </div>
             <div class="button async-button" onclick="toggleSpinner(event)">
                 <div class="spinner"></div>
@@ -40,8 +54,29 @@
     </main>
 
     <script>
-        function toggleSpinner(event){
+        function toggleSpinner(event) {
             event.currentTarget.classList.toggle("waiting")
+        }
+
+        function notify(type) {
+            let notification = document.createElement("div")
+            notification.className = "notification hidden"
+            let p = document.createElement("p")
+            p.className = "message"
+            notification.appendChild(p)
+            p.innerText = "Et tempor excepteur ipsum pariatur laboris nulla irure tempor labore exercitation."
+            switch (type) {
+                case "warn":
+                case "error":
+                case "success":
+                    notification.classList.add(type)
+            }
+
+            notifications.appendChild(notification)
+            setTimeout(() => { notification.classList.remove("hidden") }, 10)
+            setTimeout(() => { notification.classList.add("hidden") }, 1000)
+            setTimeout(() => { notification.classList.add("removing") }, 1500)
+            setTimeout(() => { notification.remove() }, 2000)
         }
     </script>
 </body>

@@ -4,7 +4,7 @@ input {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: $spacing/2 $spacing;
+    padding: $spacing * 0.5 $spacing;
     border-radius: $radius;
     outline-color: $green;
     background-color: $gray;

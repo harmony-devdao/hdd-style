@@ -47,3 +47,28 @@ Formatted horizontal layout for buttons.
     <div class="button">Button 3</div>
 </div>
 ```
+
+### Notification
+Display a fixed notification at the top right corner.
+
+```HTML
+<div class="notification [info* | success | warn | error ] [? hidden] [? removing]">
+    <p class="message">
+        ...Your Message
+        </p>
+</div>
+```
+
+You can programatically hide the notification and show it by removing the hidden class.
+When you hide it again, you can remove it using the removing class, which will collapse the items height. Afterwards it can be removed safely.
+
+### Notification Group
+When using notifications, you should put all notifications in a group that manages them
+```HTML
+<div class="notifications">
+    <div class="notification [...]">...</div>
+    <div class="notification [...]">...</div>
+    <div class="notification [...]">...</div>
+    ...
+</div>
+```

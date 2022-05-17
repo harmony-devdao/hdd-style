@@ -1,0 +1,81 @@
+@import "_variables";
+
+.notifications {
+    position: fixed;
+    top: 0;
+    right: $spacing;
+    pointer-events: none;
+    box-sizing: border-box;
+
+
+    .notification {
+        position: static;
+    }
+}
+
+.notification {
+    pointer-events: all;
+
+    position: fixed;
+    top: 0;
+    right: $spacing;
+    margin: $spacing 0;
+
+    display: flex;
+
+    max-height: 100vh;
+    max-width: 100%;
+    width: 720px;
+    overflow: hidden;
+    
+    color: white;
+    background-color: $midnight-blue;
+    border-radius: $radius;
+
+    transition: all 0.5s;
+
+    &.hidden {
+        transform: translateX(calc(100% + #{$spacing} ));
+    }
+
+    &.removing {
+        max-height: 0;
+        margin: 0;
+    }
+
+    .message {
+        padding: 0 $spacing;
+    }
+
+    &::before {
+        content: "";
+        font-size: 1.3em;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: 64px;
+        font-weight: bold;
+        text-shadow: 0 0 2px $midnight-blue;
+    }
+
+    &::before {
+        content: "i";
+        background-color: $blue;
+    }
+
+    &.error::before {
+        content: "!";
+        background-color: $red;
+    }
+
+    &.warn::before {
+        content: "?";
+        background-color: $yellow;
+    }
+
+    &.success::before {
+        content: "✔";
+        background-color: $green;
+    }
+}
