@@ -164,12 +164,14 @@ input {
 .notifications {
   position: fixed;
   top: 0;
-  right: 1.1rem;
+  left: 0;
+  width: 100vw;
   pointer-events: none;
   box-sizing: border-box;
 }
 .notifications .notification {
   position: static;
+  margin-left: auto;
 }
 
 .notification {
@@ -177,7 +179,7 @@ input {
   position: fixed;
   top: 0;
   right: 1.1rem;
-  margin: 1.1rem 0;
+  margin: 1.1rem;
   display: flex;
   max-height: 100vh;
   max-width: 100%;
@@ -185,7 +187,8 @@ input {
   overflow: hidden;
   color: white;
   background-color: #040a17;
-  border-radius: 0.33rem;
+  border-bottom-left-radius: 0.33rem;
+  border-top-left-radius: 0.33rem;
   transition: all 0.5s;
 }
 .notification.hidden {
@@ -193,7 +196,8 @@ input {
 }
 .notification.removing {
   max-height: 0;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .notification .message {
   padding: 0 1.1rem;

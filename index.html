@@ -41,7 +41,7 @@
             <div class="button" onclick="notify('error')">
                 Error
             </div>
-            <div class="button async-button" onclick="toggleSpinner(event)">
+            <div class="button async-button" onclick="wait(event)">
                 <div class="spinner"></div>
                 Click To Toggle Async
             </div>
@@ -53,31 +53,23 @@
         </div>
     </main>
 
+    <script src="./js/notifications.js"></script>
+    <script src="./js/button.js"></script>
+
     <script>
-        function toggleSpinner(event) {
-            event.currentTarget.classList.toggle("waiting")
+        function wait(event) {
+            const button = event.currentTarget
+            const seconds = 3
+            Notification.notify(Notification.Type.WARN, `Button will wait for ${3}s`)
+            Button.waitForPromise(button, new Promise(resolve =>{
+                setTimeout(resolve, seconds * 1000)
+            }))
         }
 
-        function notify(type) {
-            let notification = document.createElement("div")
-            notification.className = "notification hidden"
-            let p = document.createElement("p")
-            p.className = "message"
-            notification.appendChild(p)
-            p.innerText = "Et tempor excepteur ipsum pariatur laboris nulla irure tempor labore exercitation."
-            switch (type) {
-                case "warn":
-                case "error":
-                case "success":
-                    notification.classList.add(type)
-            }
-
-            notifications.appendChild(notification)
-            setTimeout(() => { notification.classList.remove("hidden") }, 10)
-            setTimeout(() => { notification.classList.add("hidden") }, 1000)
-            setTimeout(() => { notification.classList.add("removing") }, 1500)
-            setTimeout(() => { notification.remove() }, 2000)
+        function notify(type){
+            Notification.notify(type, "Et tempor excepteur ipsum pariatur laboris nulla irure tempor labore exercitation.")
         }
+      
     </script>
 </body>
 
