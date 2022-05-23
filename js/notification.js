@@ -5,7 +5,7 @@ var Notification = {
         WARN: "warn",
         ERROR: "error",
     },
-    notify(type, message, duration=3000) {
+    notify(message, { type = Type.INFO, duration = 3000 }) {
         let notification = document.createElement("div")
         notification.className = "notification hidden"
         let p = document.createElement("p")
@@ -26,6 +26,6 @@ var Notification = {
         setTimeout(() => { notification.classList.remove("hidden") }, 10)
         setTimeout(() => { notification.classList.add("hidden") }, duration + 10)
         setTimeout(() => { notification.classList.add("removing") }, duration + 510)
-        setTimeout(() => { notification.remove() }, duration +1010)
+        setTimeout(() => { notification.remove() }, duration + 1010)
     }
 }

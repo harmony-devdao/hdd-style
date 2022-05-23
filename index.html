@@ -92,7 +92,7 @@
         </div>
     </main>
 
-    <script src="./js/notifications.js"></script>
+    <script src="./js/notification.js"></script>
     <script src="./js/button.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script>
@@ -107,14 +107,16 @@
         function wait(event) {
             const button = event.currentTarget
             const seconds = 3
-            Notification.notify(Notification.Type.WARN, `Button will wait for ${3}s`)
+            Notification.notify(`Button will wait for ${3}s`, {
+                type: Notification.Type.WARN
+            })
             Button.waitForPromise(button, new Promise(resolve => {
                 setTimeout(resolve, seconds * 1000)
             }))
         }
 
         function notify(type) {
-            Notification.notify(type, "Et tempor excepteur ipsum pariatur laboris nulla irure tempor labore exercitation.")
+            Notification.notify("Et tempor excepteur ipsum pariatur laboris nulla irure tempor labore exercitation.", { type })
         }
 
     </script>
