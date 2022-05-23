@@ -7,25 +7,35 @@ html {
 }
 
 header {
-    
+
     max-width: 512px;
     margin: auto;
     margin-bottom: 2em;
     color: $green;
 
-    >img {
-        max-width: 100%;
+
+    &:after {
+        margin: 0 auto;
+        content: "";
+        max-width: 80%;
+        height: 200px;
         display: block;
         padding: $spacing 2*$spacing;
         box-sizing: border-box;
+        background-image: url("../images/harmony-dev-dao-logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }
 
 .app {
+
     // color: $white;
-    h1{
+    h1 {
         margin-top: 0;
     }
+
     color: $white;
     background-color: $midnight-blue;
     border-radius: $radius;

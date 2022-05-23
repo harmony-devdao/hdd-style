@@ -30,11 +30,18 @@ header {
   margin-bottom: 2em;
   color: #69fabd;
 }
-header > img {
-  max-width: 100%;
+header:after {
+  margin: 0 auto;
+  content: "";
+  max-width: 80%;
+  height: 200px;
   display: block;
   padding: 1.1rem 2.2rem;
   box-sizing: border-box;
+  background-image: url("../images/harmony-dev-dao-logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .app {
@@ -176,6 +183,7 @@ input {
 
 .notification {
   pointer-events: all;
+  z-index: 10000;
   position: fixed;
   top: 0;
   right: 1.1rem;
@@ -228,6 +236,12 @@ input {
 .notification.success::before {
   content: "✔";
   background-color: #69fabd;
+}
+
+code {
+  display: block;
+  background-color: #3f3f3f;
+  padding: 1.1rem;
 }
 
 /*# sourceMappingURL=harmony-dev-dao-style.css.map */

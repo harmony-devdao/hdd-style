@@ -1,7 +1,7 @@
 var Notification = {
     Type: {
         INFO: "info",
-        SUCCESS: "succes",
+        SUCCESS: "success",
         WARN: "warn",
         ERROR: "error",
     },
