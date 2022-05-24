@@ -30,17 +30,39 @@
     <main>
         <header>
         </header>
-        <div class="app">
+        <div id="app">
             <h1>This is an example website</h1>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
                 et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
                 rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <p class="accent">If you need to say something important.</p>
+
             <h2>Input</h2>
             <div class="example">
                 <label for="input-example">
                     <input id="input-example" type="text">
                 </label>
+            </div>
+
+            <h2>AssetInput</h2>
+            <div class="example">
+                <div class="asset-input">
+                    <input type="text">
+                    <select name="" id="">
+                        <option value="USDC">ONE</option>
+                        <option value="USDC">USDC</option>
+                        <option value="USDC">WBTC</option>
+                        <option value="USDC">1ETH</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <h2>Button</h2>
+            <div class="example">
+                <div class="button" onclick="notify('info')">
+                    Click Me
+                </div>
             </div>
             <h2>Button</h2>
             <div class="example">

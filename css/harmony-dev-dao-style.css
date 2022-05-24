@@ -44,13 +44,13 @@ header:after {
   background-size: contain;
 }
 
-.app {
+#app {
   color: whitesmoke;
   background-color: #040a17;
   border-radius: 0.33rem;
   padding: 1.1rem 2.2rem;
 }
-.app h1 {
+#app h1 {
   margin-top: 0;
 }
 

@@ -15,7 +15,9 @@ just have to provide the correct class names.
             <img src="./images/harmony-dev-dao-logo.png" />
         </header>
         <main>
-            ... <!-- Your application -->
+            <div id="app">
+                ... <!-- Your application -->
+            </div>
         </main>
     </body>
 </html>
