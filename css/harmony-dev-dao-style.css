@@ -50,6 +50,7 @@ label {
   font-weight: bold;
   color: #00ade8;
   margin-bottom: 0.3rem;
+  margin-top: 1rem;
 }
 
 #app {
@@ -60,6 +61,7 @@ label {
 }
 #app h1 {
   margin-top: 0;
+  color: #69fabd;
 }
 
 .accent {
@@ -116,7 +118,7 @@ input {
   cursor: pointer;
   text-align: center;
   user-select: none;
-  padding: 1.1rem 1.1rem;
+  padding: 0.825rem 1.1rem;
   background-color: #3f3f3f;
   border-radius: 0.33rem;
   transition: all 0.15s;
