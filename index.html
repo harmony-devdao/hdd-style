@@ -21,6 +21,10 @@
             position: relative;
             width: auto;
         }
+
+        .example .notification {
+            transition: none !important;
+        }
     </style>
 </head>
 
@@ -39,9 +43,10 @@
 
             <h2>Input</h2>
             <div class="example">
-                <label for="input-example">
-                    <input id="input-example" type="text">
-                </label>
+                <label for="input-example">Some Labeled Input</label>
+
+                <input id="input-example" type="text">
+
             </div>
 
             <h2>AssetInput</h2>
@@ -108,10 +113,65 @@
             <div class="button" onclick="notify('error')">
                 Error
             </div>
+
+            <h2 id="assets">Assets</h2>
+
+            <h3>Assets Preview</h3>
+            <div class="example">
+                <div class="asset-preview">
+                    <div class="icon">
+                        <img src="https://harmony-devdao.github.io/harmony-tokens/icons/usdc.svg">
+
+                    </div>
+                    <div class="name">USD Coin</div>
+                    <div class="symbol">1USDC</div>
+                    <div class="decimals">6</div>
+                </div>
+            </div>
+
+            <h3>Assets List</h3>
+            <div class="example">
+                <div class="assets-list">
+                    <div class="asset-preview">
+                        <div class="icon">
+                            <img src="https://harmony-devdao.github.io/harmony-tokens/icons/one.svg">
+
+                        </div>
+                        <div class="name">Wrapped One</div>
+                        <div class="symbol">WONE</div>
+                        <div class="decimals">18</div>
+                        <div class="amount">100</div>
+                    </div>
+                    <div class="asset-preview">
+                        <div class="icon">
+                            <img src="https://harmony-devdao.github.io/harmony-tokens/icons/eth.svg">
+
+                        </div>
+                        <div class="name">Wrapped ETH</div>
+                        <div class="symbol">ETH</div>
+                        <div class="decimals">18</div>
+                        <div class="amount">0.0001</div>
+
+                    </div>
+                    <div class="asset-preview">
+                        <div class="icon">
+                            <img src="https://harmony-devdao.github.io/harmony-tokens/icons/usdc.svg">
+
+                        </div>
+                        <div class="name">USD Coin</div>
+                        <div class="symbol">1USDC</div>
+                        <div class="decimals">6</div>
+                        <div class="amount">745</div>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="notifications" class="notifications">
         </div>
+
+
     </main>
 
     <script src="./js/notification.js"></script>

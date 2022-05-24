@@ -44,6 +44,14 @@ header:after {
   background-size: contain;
 }
 
+label {
+  display: block;
+  color: #00ade8;
+  font-weight: bold;
+  color: #00ade8;
+  margin-bottom: 0.3rem;
+}
+
 #app {
   color: whitesmoke;
   background-color: #040a17;
@@ -242,6 +250,70 @@ code {
   display: block;
   background-color: #3f3f3f;
   padding: 1.1rem;
+}
+
+.asset-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #00ade8;
+  border-radius: 3px;
+}
+.asset-preview > * {
+  margin: 0 20px;
+}
+.asset-preview > *::before {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #00ade8;
+  text-transform: uppercase;
+  margin-right: 0.3em;
+  margin-bottom: 0.2em;
+  opacity: 0.6;
+}
+.asset-preview .amount,
+.asset-preview .name,
+.asset-preview .decimals,
+.asset-preview .symbol {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.asset-preview .name {
+  flex: 1.5;
+}
+.asset-preview .icon {
+  display: flex;
+  align-items: center;
+}
+.asset-preview .icon > img {
+  max-height: 32px;
+  width: 32px;
+}
+.asset-preview .name::before {
+  content: "name";
+}
+.asset-preview .decimals::before {
+  content: "decimals";
+}
+.asset-preview .symbol::before {
+  content: "symbol";
+}
+.asset-preview .amount::before {
+  content: "amount";
+}
+
+.assets-list {
+  border: 2px solid #00ade8;
+  border-radius: 0.33rem;
+}
+.assets-list .asset-preview {
+  border: none;
+}
+.assets-list .asset-preview:not(:last-child) {
+  border-bottom: 1px solid #00ade8;
 }
 
 /*# sourceMappingURL=harmony-dev-dao-style.css.map */

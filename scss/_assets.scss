@@ -1,0 +1,78 @@
+@import "_variables";
+
+.asset-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid $blue;
+    border-radius: 3px;
+
+>* {
+    margin: 0 20px;
+}
+
+    >*::before {
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: $blue;
+        text-transform: uppercase;
+        margin-right: 0.3em;
+        margin-bottom: 0.2em;
+        opacity: 0.6;
+    }
+
+    .amount,
+    .name,
+    .decimals,
+    .symbol {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .name {
+        flex: 1.5;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+
+        >img {
+            max-height: 32px;
+            width: 32px;
+        }
+    }
+
+    .name::before {
+        content: "name";
+    }
+
+    .decimals::before {
+        content: "decimals";
+    }
+
+    .symbol::before {
+        content: "symbol";
+    }
+
+    .amount::before {
+        content: "amount";
+    }
+}
+
+
+.assets-list {
+    border: 2px solid $blue;
+    border-radius: $radius; 
+
+    .asset-preview {
+        border: none;
+    }
+
+    .asset-preview:not(:last-child){
+        border-bottom: 1px solid $blue;
+    }
+}
