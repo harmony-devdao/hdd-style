@@ -5,7 +5,7 @@ function numberToHexFormat(number) {
     return "0x" + number.toString(16)
 }
 
-const Networks = {
+var Networks = {
     1666600000: {
         chainId: numberToHexFormat(1666600000),
         chainName: "Harmony Mainnet",
@@ -258,3 +258,5 @@ class Wallet {
 
     }
 }
+
+Window.Wallet = Wallet

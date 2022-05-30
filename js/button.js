@@ -1,4 +1,4 @@
-const Button = {
+var Button = {
     startWaiting(button) {
         button.classList.add("waiting")
     },
