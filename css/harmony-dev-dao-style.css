@@ -34,7 +34,7 @@ main > header {
   margin-bottom: 2em;
   color: #69fabd;
 }
-main > header:after {
+main > header:before {
   margin: 0 auto;
   content: "";
   max-width: 80%;
