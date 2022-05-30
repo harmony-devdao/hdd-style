@@ -343,7 +343,7 @@ code {
   padding: 1.1rem;
 }
 
-body > header {
+#top-bar {
   position: fixed;
   top: 0;
   left: 0;
