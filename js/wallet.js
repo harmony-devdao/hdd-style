@@ -259,4 +259,4 @@ class Wallet {
     }
 }
 
-Window.Wallet = Wallet
+window.Wallet = Wallet
