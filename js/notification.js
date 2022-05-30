@@ -5,7 +5,7 @@ var Notification = {
         WARN: "warn",
         ERROR: "error",
     },
-    notify(message, { type = Type.INFO, duration = 3000 }) {
+    notify(message, { type = this.Type.INFO, duration = 3000 }) {
         
         const notificationContainer = document.querySelector("#notifications")
         if(!notificationContainer) throw new Error("Notifiaction requires a container '#notifications'!")
