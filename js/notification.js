@@ -6,6 +6,11 @@ var Notification = {
         ERROR: "error",
     },
     notify(message, { type = Type.INFO, duration = 3000 }) {
+        
+        const notificationContainer = document.querySelector("#notifications")
+        if(!notificationContainer) throw new Error("Notifiaction requires a container '#notifications'!")
+
+
         let notification = document.createElement("div")
         notification.className = "notification hidden"
         let p = document.createElement("p")
@@ -22,7 +27,8 @@ var Notification = {
                 console.warn(`Provided type '${type}' does not exist.`)
         }
 
-        notifications.appendChild(notification)
+        
+        document.querySelector("#notifications").appendChild(notification)
         setTimeout(() => { notification.classList.remove("hidden") }, 10)
         setTimeout(() => { notification.classList.add("hidden") }, duration + 10)
         setTimeout(() => { notification.classList.add("removing") }, duration + 510)

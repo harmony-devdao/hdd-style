@@ -1,12 +1,17 @@
 @import "_variables";
 
+
+html, body {
+    margin: 0;
+}
+
 html {
     font-family: $font-family;
     background-color: $night-blue;
     font-size: $font-size;
 }
 
-header {
+main > header {
 
     max-width: 512px;
     margin: auto;

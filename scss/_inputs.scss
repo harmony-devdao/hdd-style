@@ -39,7 +39,9 @@ input {
 
 .button,
 button {
-    display: block;
+    display: flex;
+    align-items: center;
+
     border-width: 1px;
     border-style: outset;
     border-color: rgb(118, 118, 118);
@@ -55,7 +57,7 @@ button {
     width: 100%;
 
     color: $white;
-    padding: $spacing*3/4 $spacing;
+    padding: calc($spacing * 3 / 4) $spacing;
     background-color: $gray;
     border-radius: $radius;
 
@@ -164,7 +166,7 @@ button {
 select {
     color: $white;
     background-color: $gray;
-    padding: $spacing/2 $spacing;
+    padding: calc($spacing / 2) $spacing;
     border-radius: $radius;
 }
 
@@ -191,7 +193,7 @@ select {
     border-radius: $radius;
 
     select {
-        margin: $spacing/2;
+        margin: calc($spacing / 2);
         border-width: 2px;
     }
 
