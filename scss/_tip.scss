@@ -1,0 +1,72 @@
+@import "_variables";
+
+.tipping-jar {
+    position: fixed;
+    bottom: $spacing;
+    right: $spacing;
+    max-width: calc(100% - 2 * $spacing);
+
+    overflow: hidden;
+
+    .tipping-jar-content {
+
+        h2 {
+            margin-top: 0;
+        }
+
+        font-size: 0.8rem;
+        background-color: $midnight-blue;
+        border: 2px outset $green;
+        border-radius: $radius;
+
+
+        box-sizing: border-box;
+        width: 420px;
+        max-width: 100%;
+        padding: $spacing;
+        padding-bottom: 5.5rem;
+
+        opacity: 0;
+
+        transform: scale(0);
+        transform-origin: bottom right;
+        // transition: opacity 0.5s, transform 0.8s;
+    }
+
+
+
+    .floating-button::before {
+        content: "💙";
+    }
+
+
+}
+
+.tipping-jar.open {
+
+    .tipping-jar-content {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .floating-button {
+        background-color: transparent;
+
+        &::before {
+            content: "❌";
+        }
+    }
+}
+
+.tipping-jar-receiver-row {
+    display: flex;
+    align-items: center;
+    color: $blue;
+
+
+    >* {
+        display: block;
+        margin-bottom: 3px;
+    }
+
+}

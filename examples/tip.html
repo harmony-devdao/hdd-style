@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" sizes="any">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/harmony-dev-dao-style.css">
+</head>
+
+<body>
+    <header id="top-bar">
+        <div class="wallet">
+
+            <button class="button async-button wallet-button">
+                <div class="spinner"></div>
+            </button>
+            <div class="address">
+
+            </div>
+            <div class="network">
+
+            </div>
+        </div>
+    </header>
+    <main id>
+        <header>
+
+        </header>
+        <div id="app">
+            Your app goes here ...
+
+            <div class="tipping-jar">
+
+                <div class="tipping-jar-content">
+                    <div class="tipping-view">
+                        <h2>💙 Show Some Love</h2>
+                        <input class="tipping-jar-tip-input" type="number" value="10">
+                        <ul class="tipping-jar-receivers"></ul>
+                        <button class="async-button tipping-jar-tip-button">
+                            <div class="spinner"></div>
+                            Tip
+                        </button>
+                    </div>
+                </div>
+
+                <button class="floating-button button"></button>
+            </div>
+        </div>
+
+        <div id="notifications">
+
+        </div>
+
+
+    </main>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js"></script>
+
+    <script src="../js/notification.js"></script>
+    <script src="../js/button.js"></script>
+    <script src="../js/wallet.js"></script>
+    <script src="../js/tip.js"></script>
+
+    <script async>
+
+        const wallet = new Wallet({
+            chainChanged: () => {
+                Tip.update()
+            }
+        })
+
+
+        wallet.init().then(() => {
+            Tip.update()
+        }).catch(console.error)
+
+
+        Tip.init("0x5edd258ce5cd4596116987e11d34973ef2857b52", wallet)
+    </script>
+</body>
+
+</html>

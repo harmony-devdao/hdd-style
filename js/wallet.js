@@ -57,11 +57,15 @@ var Networks = {
 class Wallet {
 
     constructor({
+        accountChanged = () => { },
+        chainChanged = () => { },
         changed = () => { }
     } = {}) {
         this.account = null
         this.network = null
         this.changed = changed
+        this.accountChanged = accountChanged
+        this.chainChanged = chainChanged
 
         this._handleWalletButtonClicked = this._handleWalletButtonClicked.bind(this)
         this._initWalletButtons()
@@ -73,9 +77,12 @@ class Wallet {
 
 
         this.metamaskAvailable = this._checkIfMetaMaskIsInstalled()
-        this._update()
-        this._connect()
         Wallet.instance = this
+    }
+
+    async init() {
+        this._update()
+        await this._connect()
     }
 
     _checkIfMetaMaskIsInstalled() {
@@ -130,7 +137,8 @@ class Wallet {
      * @param {number} chainId 
      */
     async changeChain(chainId) {
-        if (this.ethereum) {
+
+        if (window.ethereum) {
             const supportedNetwork = Networks[chainId]
             if (!supportedNetwork) {
                 try {
@@ -161,13 +169,17 @@ class Wallet {
     }
 
     onChainChanged(chainId) {
+        const old = this.network
         this.network = parseInt(chainId, 16)
         this._update()
+        this.chainChanged(chainId, old)
     }
 
     onAccountChanged(accounts) {
+        const old = this.account
         this.account = accounts[0]
         this._update()
+        this.accountChanged(this.account, old)
     }
 
     onDisconnect() {

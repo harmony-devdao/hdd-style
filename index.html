@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmony Developer DAO - Template</title>
 
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" sizes="any">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
     </script>
 
@@ -14,9 +17,11 @@
     <link rel="stylesheet" href="css/harmony-dev-dao-style.css">
 
     <style>
-        .example .notifications {
-            padding: 20px 0;
-            background-color: grey;
+        .example .notifications,
+        .example .viewport {
+            padding: 10px 0;
+            border-radius: 5px;
+            background-color: rgb(66, 66, 66);
             display: block;
             position: relative;
             width: auto;
@@ -24,6 +29,10 @@
 
         .example .notification {
             transition: none !important;
+        }
+
+        .example .viewport {
+            position: absolute !important;
         }
     </style>
 </head>
@@ -47,7 +56,7 @@
 
             </div>
 
-            <h2>AssetInput</h2>
+            <h2 id="asset-input">AssetInput</h2>
             <div class="example">
                 <div class="asset-input">
                     <input type="text">
@@ -77,12 +86,6 @@
 
                 <div onclick="notify('info')" class="button disabled">
                     Button Disabled
-                </div>
-            </div>
-            <h2>Button</h2>
-            <div class="example">
-                <div class="button" onclick="notify('info')">
-                    Click Me
                 </div>
             </div>
 
@@ -120,19 +123,19 @@
                 </div>
             </div>
             <div class="button-group">
-            <div class="button" onclick="notify('info')">
-                Info
+                <div class="button" onclick="notify('info')">
+                    Info
+                </div>
+                <div class="button" onclick="notify('success')">
+                    Success
+                </div>
+                <div class="button" onclick="notify('warn')">
+                    Warn
+                </div>
+                <div class="button" onclick="notify('error')">
+                    Error
+                </div>
             </div>
-            <div class="button" onclick="notify('success')">
-                Success
-            </div>
-            <div class="button" onclick="notify('warn')">
-                Warn
-            </div>
-            <div class="button" onclick="notify('error')">
-                Error
-            </div>
-        </div>
 
             <h2 id="assets">Assets</h2>
 

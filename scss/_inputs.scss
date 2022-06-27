@@ -108,7 +108,7 @@ button {
     display: flex;
     justify-content: center;
 
-    &.waiting>.spinner {
+    &.waiting > .spinner {
         opacity: 1;
     }
 
@@ -203,5 +203,30 @@ select {
         &:focus {
             outline: none;
         }
+    }
+}
+
+.floating-button {
+    position: fixed;
+    border-color: $green;
+    border-width: 0;
+
+    $size: 5rem;
+    width: $size;
+    height: $size;
+    border-radius: calc($size / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0;
+
+    right: calc($spacing + 2px);
+    bottom: calc($spacing + 2px);
+
+    background-color: $midnight-blue;
+
+    &:hover {
+        background-color: darken($color: $midnight-blue, $amount: 10%);
     }
 }

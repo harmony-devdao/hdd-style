@@ -12,3 +12,5 @@ var Button = {
         })
     }
 }
+
+Window.Button = Button
