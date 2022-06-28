@@ -366,6 +366,29 @@ class Tip {
         return tipElement.querySelector(this.inputSelector)
     }
 
+    static createElement() {
+        const tippingJar = document.createElement("div")
+        tippingJar.className = this.selector.replace(".", "")
+
+        tippingJar.innerHTML = `
+                <div class="tipping-jar-content">
+            <div class="tipping-view">
+                <h2>💙 Show Some Love</h2>
+                <input class="tipping-jar-tip-input" type="number" value="10">
+                <ul class="tipping-jar-receivers"></ul>
+                <button class="async-button tipping-jar-tip-button">
+                    <div class="spinner"></div>
+                    Tip
+                </button>
+            </div>
+        </div>
+
+            <button class="floating-button button"></button>
+    `
+        return tippingJar
+
+    }
+
     static init(contract, wallet) {
         this.contract = contract
         this.wallet = wallet
@@ -408,26 +431,37 @@ class Tip {
             const totalShares = await contract.totalShares()
 
             const BigNumber = window.ethers.BigNumber
+
+            const payees = []
             for (let i = 0; i < payeesCount; i++) {
                 const payee = await contract.payee(i)
                 const payeeShares = await contract.shares(payee)
 
-                const shares = (payeeShares.mul(BigNumber.from(1000)).div(totalShares)).toNumber()
+                payees.push({
+                    address: payee,
+                    share: payeeShares,
+                })
+            }
+
+            payees.forEach(({ address, share }) => {
+                const shares = (share.mul(BigNumber.from(1000)).div(totalShares)).toNumber()
                 const percent = parseFloat((shares / 10).toFixed(2)) + "%" // the parsefloat removes trailing zeroes
 
                 const receiverRow = document.createElement("li")
                 receiverRow.className = "tipping-jar-receiver-row"
 
-                const address = document.createElement("a")
-                if (this.namedAddresses[payee]) {
-                    address.textContent = this.namedAddresses[payee] + " (" + percent + ")"
+                const addressLink = document.createElement("a")
+                if (this.namedAddresses[address]) {
+                    addressLink.textContent = percent + " - " + this.namedAddresses[address] 
                 } else {
-                    address.textContent = payee.substr(0, 7) + "..." + payee.substr(-5) + " (" + percent + ")"
+                    addressLink.textContent = percent + " - " + address.substr(0, 7) + "..." + address.substr(-5)
                 }
-                address.href = "https://explorer.harmony.one/address/" + payee
-                receiverRow.appendChild(address)
+                addressLink.href = "https://explorer.harmony.one/address/" + address
+                receiverRow.appendChild(addressLink)
                 receviers.appendChild(receiverRow)
-            }
+            })
+
+
         }
     }
 
